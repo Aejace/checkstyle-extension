@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<checkstyle-configurations file-format-version="5.0.0" default-check-configuration="Demo">
+  <check-configuration name="Demo" location="internal_config_1661557658134.xml" type="internal" description=""/>
+</checkstyle-configurations>
