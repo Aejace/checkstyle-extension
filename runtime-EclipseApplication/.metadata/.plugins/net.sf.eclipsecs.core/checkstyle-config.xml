@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<checkstyle-configurations file-format-version="5.0.0" default-check-configuration="Operands">
+<checkstyle-configurations file-format-version="5.0.0" default-check-configuration="length">
   <check-configuration name="Checking stuff works" location="internal_config_1664131972143.xml" type="internal" description=""/>
   <check-configuration name="altHung" location="internal_config_1664139292011.xml" type="internal" description=""/>
   <check-configuration name="Operators" location="internal_config_1664144232231.xml" type="internal" description=""/>
   <check-configuration name="Operands" location="internal_config_1664144277977.xml" type="internal" description=""/>
+  <check-configuration name="length" location="internal_config_1664144920542.xml" type="internal" description=""/>
 </checkstyle-configurations>
