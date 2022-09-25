@@ -43,5 +43,17 @@
 	<section name="net.sf.eclipsecs.ui.config.RuleConfigurationEditDialog#hungarian">
 		<item key="maximized" value="false"/>
 		<item key="minimized" value="false"/>
+		<item key="width" value="573"/>
+		<item key="height" value="281"/>
+		<item key="x" value="674"/>
+		<item key="y" value="188"/>
+	</section>
+	<section name="net.sf.eclipsecs.ui.config.RuleConfigurationEditDialog#Halstead">
+		<item key="maximized" value="false"/>
+		<item key="minimized" value="false"/>
+		<item key="width" value="573"/>
+		<item key="height" value="281"/>
+		<item key="x" value="674"/>
+		<item key="y" value="188"/>
 	</section>
 </section>
