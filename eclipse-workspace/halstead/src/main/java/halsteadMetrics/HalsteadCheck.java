@@ -48,7 +48,8 @@ public class HalsteadCheck extends AbstractCheck {
 		// TODO Auto-generated method stub
 		return new int[0];
 	}
- 
+	
+	
 }
 
 class HungarianNotationMemberDetector {
