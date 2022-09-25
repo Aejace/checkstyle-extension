@@ -80,4 +80,8 @@
 		<item key="x" value="649"/>
 		<item key="y" value="188"/>
 	</section>
+	<section name="net.sf.eclipsecs.ui.config.RuleConfigurationEditDialog#HalsteadOperandsCheck">
+		<item key="maximized" value="false"/>
+		<item key="minimized" value="false"/>
+	</section>
 </section>

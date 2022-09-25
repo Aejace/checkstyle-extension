@@ -5,7 +5,7 @@
 <checkstyle-metadata>
     <rule-group-metadata name="Halstead"  priority="1600">
         <description>%halsteadChecks.desc</description>
-        <rule-metadata name= "%HalsteadOperators.name" internal-name="HalsteadOperatorsCheck" parent="TreeWalker">
+        <rule-metadata name= "HalsteadOperators.name" internal-name="HalsteadOperatorsCheck" parent="TreeWalker">
             <alternative-name internal-name="halsteadMetrics.HalsteadOperatorsCheck" />
             <description>%halsteadOperators.desc</description>
         </rule-metadata>

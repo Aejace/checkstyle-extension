@@ -15,4 +15,7 @@
     <package name="halsteadOperatorsPackage">
         <package name="dummysubpackage"/>
     </package>
+    <package name="halsteadOperandsPackage">
+        <package name="dummysubpackage"/>
+    </package>
 </checkstyle-packages>
