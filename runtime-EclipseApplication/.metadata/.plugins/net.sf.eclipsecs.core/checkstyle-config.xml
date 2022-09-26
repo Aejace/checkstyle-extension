@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<checkstyle-configurations file-format-version="5.0.0" default-check-configuration="Demo">
-  <check-configuration name="Demo" location="internal_config_1661557658134.xml" type="internal" description=""/>
+<checkstyle-configurations file-format-version="5.0.0" default-check-configuration="MegaCheck">
+  <check-configuration name="Checking stuff works" location="internal_config_1664131972143.xml" type="internal" description=""/>
+  <check-configuration name="MegaCheck" location="internal_config_1664169102441.xml" type="internal" description=""/>
 </checkstyle-configurations>

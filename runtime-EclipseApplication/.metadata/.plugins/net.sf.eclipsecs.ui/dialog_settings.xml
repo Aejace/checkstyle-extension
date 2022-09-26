@@ -43,5 +43,49 @@
 	<section name="net.sf.eclipsecs.ui.config.RuleConfigurationEditDialog#hungarian">
 		<item key="maximized" value="false"/>
 		<item key="minimized" value="false"/>
+		<item key="width" value="573"/>
+		<item key="height" value="281"/>
+		<item key="x" value="674"/>
+		<item key="y" value="188"/>
+	</section>
+	<section name="net.sf.eclipsecs.ui.config.RuleConfigurationEditDialog#Halstead">
+		<item key="maximized" value="false"/>
+		<item key="minimized" value="false"/>
+		<item key="width" value="573"/>
+		<item key="height" value="281"/>
+		<item key="x" value="674"/>
+		<item key="y" value="188"/>
+	</section>
+	<section name="net.sf.eclipsecs.ui.config.RuleConfigurationEditDialog#InternalHalsteadOperators">
+		<item key="maximized" value="false"/>
+		<item key="minimized" value="false"/>
+		<item key="width" value="574"/>
+		<item key="height" value="281"/>
+		<item key="x" value="673"/>
+		<item key="y" value="188"/>
+	</section>
+	<section name="net.sf.eclipsecs.ui.config.RuleConfigurationEditDialog#InternalHalsteadLength">
+		<item key="maximized" value="false"/>
+		<item key="minimized" value="false"/>
+	</section>
+	<section name="net.sf.eclipsecs.ui.config.RuleConfigurationEditDialog#HalsteadCheck">
+		<item key="maximized" value="false"/>
+		<item key="minimized" value="false"/>
+	</section>
+	<section name="net.sf.eclipsecs.ui.config.RuleConfigurationEditDialog#HalsteadOperatorsCheck">
+		<item key="maximized" value="false"/>
+		<item key="minimized" value="false"/>
+		<item key="width" value="622"/>
+		<item key="height" value="281"/>
+		<item key="x" value="649"/>
+		<item key="y" value="188"/>
+	</section>
+	<section name="net.sf.eclipsecs.ui.config.RuleConfigurationEditDialog#HalsteadOperandsCheck">
+		<item key="maximized" value="false"/>
+		<item key="minimized" value="false"/>
+	</section>
+	<section name="net.sf.eclipsecs.ui.config.RuleConfigurationEditDialog#HalsteadLengthCheck">
+		<item key="maximized" value="false"/>
+		<item key="minimized" value="false"/>
 	</section>
 </section>
