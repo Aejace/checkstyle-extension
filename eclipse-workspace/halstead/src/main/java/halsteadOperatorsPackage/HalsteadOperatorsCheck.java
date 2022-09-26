@@ -115,7 +115,7 @@ public class HalsteadOperatorsCheck extends AbstractCheck
 	@Override
 	public void finishTree(DetailAST aAST)
 	{
-		log(aAST.getLineNo(), message + count);
+		log(aAST.getLineNo(), message + count + " -AJ");
 		count = 0;
 	}
 }

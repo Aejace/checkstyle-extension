@@ -129,7 +129,7 @@ public class HalsteadLengthCheck extends AbstractCheck
 	@Override
 	public void finishTree(DetailAST aAST)
 	{
-		log(aAST.getLineNo(), message + length);
+		log(aAST.getLineNo(), message + length + " -AJ");
 		length = 0;
 	}
 }
