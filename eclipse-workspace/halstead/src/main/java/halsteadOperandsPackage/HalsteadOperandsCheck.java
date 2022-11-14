@@ -2,27 +2,20 @@ package halsteadOperandsPackage;
 
 import com.puppycrawl.tools.checkstyle.api.*;
 
+import resources.TokenLists;
+
 public class HalsteadOperandsCheck extends AbstractCheck {
 
 	private int count = 0;
 	private String message = "Operands Count: ";
+	private final int[] tokens;
 	
-	int[] tokens = new int[] {TokenTypes.CHAR_LITERAL,
-			TokenTypes.EMPTY_STAT,
-			TokenTypes.EXPR,
-			TokenTypes.FOR_CONDITION,
-			TokenTypes.FOR_INIT,
-			TokenTypes.FOR_ITERATOR,
-			TokenTypes.IDENT,
-			TokenTypes.LABELED_STAT,
-			TokenTypes.METHOD_REF,
-			TokenTypes.NUM_DOUBLE,
-			TokenTypes.NUM_FLOAT,
-			TokenTypes.NUM_INT,
-			TokenTypes.NUM_LONG,
-			TokenTypes.RESOURCE,
-			TokenTypes.STRING_LITERAL};
-	
+	public HalsteadOperandsCheck()
+	{
+		TokenLists tokenList = new TokenLists();
+		tokens = tokenList.getOperands();
+	}
+		
 	@Override
 	public int[] getDefaultTokens() 
 	{
