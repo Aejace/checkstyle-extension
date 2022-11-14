@@ -83,8 +83,48 @@
 	<section name="net.sf.eclipsecs.ui.config.RuleConfigurationEditDialog#HalsteadOperandsCheck">
 		<item key="maximized" value="false"/>
 		<item key="minimized" value="false"/>
+		<item key="width" value="609"/>
+		<item key="height" value="281"/>
+		<item key="x" value="656"/>
+		<item key="y" value="188"/>
 	</section>
 	<section name="net.sf.eclipsecs.ui.config.RuleConfigurationEditDialog#HalsteadLengthCheck">
+		<item key="maximized" value="false"/>
+		<item key="minimized" value="false"/>
+		<item key="width" value="593"/>
+		<item key="height" value="281"/>
+		<item key="x" value="664"/>
+		<item key="y" value="188"/>
+	</section>
+	<section name="net.sf.eclipsecs.ui.config.RuleConfigurationEditDialog#HalsteadVolumeCheck">
+		<item key="maximized" value="false"/>
+		<item key="minimized" value="false"/>
+	</section>
+	<section name="net.sf.eclipsecs.ui.config.RuleConfigurationEditDialog#LinesOfCommentsCheck">
+		<item key="maximized" value="false"/>
+		<item key="minimized" value="false"/>
+	</section>
+	<section name="net.sf.eclipsecs.ui.config.RuleConfigurationEditDialog#NumberOfCommentsCheck">
+		<item key="maximized" value="false"/>
+		<item key="minimized" value="false"/>
+	</section>
+	<section name="net.sf.eclipsecs.ui.config.RuleConfigurationEditDialog#LoopingStatementsCheck">
+		<item key="maximized" value="false"/>
+		<item key="minimized" value="false"/>
+	</section>
+	<section name="net.sf.eclipsecs.ui.config.RuleConfigurationEditDialog#ExpressionsCheck">
+		<item key="maximized" value="false"/>
+		<item key="minimized" value="false"/>
+	</section>
+	<section name="net.sf.eclipsecs.ui.config.RuleConfigurationEditDialog#HalsteadVocabularyCheck">
+		<item key="maximized" value="false"/>
+		<item key="minimized" value="false"/>
+	</section>
+	<section name="net.sf.eclipsecs.ui.config.RuleConfigurationEditDialog#HalsteadDifficultyCheck">
+		<item key="maximized" value="false"/>
+		<item key="minimized" value="false"/>
+	</section>
+	<section name="net.sf.eclipsecs.ui.config.RuleConfigurationEditDialog#HalsteadEffortCheck">
 		<item key="maximized" value="false"/>
 		<item key="minimized" value="false"/>
 	</section>

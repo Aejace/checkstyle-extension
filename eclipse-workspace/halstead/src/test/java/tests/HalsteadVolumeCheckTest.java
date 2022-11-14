@@ -9,6 +9,7 @@ import static org.mockito.Mockito.spy;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import com.puppycrawl.tools.checkstyle.api.DetailAST;
@@ -72,17 +73,9 @@ private int[] tokens;
 		verify(spyCheck, times(1)).visitToken(mockToken);
 	}
 	
-	@Test
-	void finishTreeTest() {
-		HalsteadVolumeCheck spyCheck = spy(HalsteadVolumeCheck.class);
-		DetailAST aAST = mock(DetailAST.class);
-		doNothing().when(spyCheck).log(anyInt(), anyString());
-		spyCheck.finishTree(aAST);
-		verify(spyCheck, times(1)).finishTree(aAST);	
-	}
 	
 	@Test
-	void finishTreeTest1() {
+	void finishTreeTest() {
 		HalsteadVolumeCheck spyCheck = spy(HalsteadVolumeCheck.class);
 		DetailAST aAST = mock(DetailAST.class);
 		spyCheck.visitToken(aAST);
