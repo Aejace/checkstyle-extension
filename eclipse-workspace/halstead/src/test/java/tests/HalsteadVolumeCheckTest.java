@@ -9,7 +9,6 @@ import static org.mockito.Mockito.spy;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import com.puppycrawl.tools.checkstyle.api.DetailAST;
@@ -72,7 +71,6 @@ private int[] tokens;
 		spyCheck.visitToken(mockToken);
 		verify(spyCheck, times(1)).visitToken(mockToken);
 	}
-	
 	
 	@Test
 	void finishTreeTest() {
