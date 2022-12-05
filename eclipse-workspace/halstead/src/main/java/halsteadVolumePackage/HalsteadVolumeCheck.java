@@ -1,13 +1,11 @@
 package halsteadVolumePackage;
 
 import java.util.HashMap;
-
-import com.puppycrawl.tools.checkstyle.api.AbstractCheck;
 import com.puppycrawl.tools.checkstyle.api.DetailAST;
-
+import basicCountingPackage.BasicCountingCheck;
 import resources.TokenLists;
 
-public class HalsteadVolumeCheck extends AbstractCheck {
+public class HalsteadVolumeCheck extends BasicCountingCheck {
 	private String message = "Halstead Volume: ";
 	private final int[] tokens;
 	private HashMap<Integer, Integer> dictionary = new HashMap<Integer, Integer>();
@@ -29,7 +27,6 @@ public class HalsteadVolumeCheck extends AbstractCheck {
             index++;
         }
 	}
-	
 	
 	@Override
 	public int[] getDefaultTokens() 
@@ -78,6 +75,7 @@ public class HalsteadVolumeCheck extends AbstractCheck {
 		}
 		int hVolume = hLength * logTwo;
 		
+		result = hVolume;
 		log(aAST.getLineNo(), message + hVolume + " -AJ");
 		dictionary = new HashMap<Integer, Integer>();
 	}

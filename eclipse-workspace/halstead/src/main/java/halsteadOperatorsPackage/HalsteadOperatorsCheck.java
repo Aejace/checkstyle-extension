@@ -2,11 +2,11 @@ package halsteadOperatorsPackage;
 
 import com.puppycrawl.tools.checkstyle.api.*;
 
+import basicCountingPackage.BasicCountingCheck;
 import resources.TokenLists;
 
-public class HalsteadOperatorsCheck extends AbstractCheck 
+public class HalsteadOperatorsCheck extends BasicCountingCheck 
 {
-
 	private int count = 0;
 	private String message = "Operator Count: ";
 	private final int[] tokens;
@@ -50,6 +50,7 @@ public class HalsteadOperatorsCheck extends AbstractCheck
 	@Override
 	public void finishTree(DetailAST aAST)
 	{
+		result = count;
 		log(aAST.getLineNo(), message + count + " -AJ");
 		count = 0;
 	}

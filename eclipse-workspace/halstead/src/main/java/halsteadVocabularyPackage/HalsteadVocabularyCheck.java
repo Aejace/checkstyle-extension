@@ -1,14 +1,12 @@
 package halsteadVocabularyPackage;
 
 import java.util.HashMap;
-
-import com.puppycrawl.tools.checkstyle.api.AbstractCheck;
 import com.puppycrawl.tools.checkstyle.api.DetailAST;
-
+import basicCountingPackage.BasicCountingCheck;
 import resources.TokenLists;
 
-public class HalsteadVocabularyCheck extends AbstractCheck {
-
+public class HalsteadVocabularyCheck extends BasicCountingCheck
+{
 	private String message = "Halstead Vocabulary: ";
 	private final int[] tokens;
 	private HashMap<Integer, Integer> dictionary = new HashMap<Integer, Integer>();
@@ -30,7 +28,6 @@ public class HalsteadVocabularyCheck extends AbstractCheck {
             index++;
         }
 	}
-	
 	
 	@Override
 	public int[] getDefaultTokens() 
@@ -66,8 +63,8 @@ public class HalsteadVocabularyCheck extends AbstractCheck {
 	@Override
 	public void finishTree(DetailAST aAST)
 	{
-		int count = dictionary.size();
-		log(aAST.getLineNo(), message + count + " -AJ");
+		result = dictionary.size();
+		log(aAST.getLineNo(), message + result + " -AJ");
 		dictionary = new HashMap<Integer, Integer>();
 	}
 }

@@ -2,11 +2,12 @@ package halsteadLengthPackage;
 
 import com.puppycrawl.tools.checkstyle.api.*;
 
+import basicCountingPackage.BasicCountingCheck;
 import resources.TokenLists;
 
-public class HalsteadLengthCheck extends AbstractCheck 
+public class HalsteadLengthCheck extends BasicCountingCheck 
 {
-	private int length = 0;
+	private int count = 0;
 	private String message = "Halstead Length: ";
 	private final int[] tokens;
 	
@@ -50,19 +51,20 @@ public class HalsteadLengthCheck extends AbstractCheck
 	@Override
 	public void beginTree(DetailAST root)
 	{
-		length = 0;
+		count = 0;
 	}
 	
 	@Override
 	public void visitToken(DetailAST aAST) 
 	{
-		length++;
+		count++;
 	}
 	
 	@Override
 	public void finishTree(DetailAST aAST)
 	{
-		log(aAST.getLineNo(), message + length + " -AJ");
-		length = 0;
+		result = count;
+		log(aAST.getLineNo(), message + count + " -AJ");
+		count = 0;
 	}
 }

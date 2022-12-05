@@ -1,5 +1,6 @@
 package whiteBoxTests;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.mockito.ArgumentMatchers.anyInt;
 import static org.mockito.ArgumentMatchers.anyString;
@@ -78,5 +79,12 @@ class HalsteadLengthCheckTest {
 		doNothing().when(spyCheck).log(anyInt(), anyString());
 		spyCheck.finishTree(aAST);
 		verify(spyCheck, times(1)).finishTree(aAST);	
+	}
+	
+	@Test
+	void getResultTest() {
+		HalsteadLengthCheck check = new HalsteadLengthCheck();
+		Number result = check.getResult();
+		assertEquals(0, result);
 	}
 }
