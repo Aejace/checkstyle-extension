@@ -1,14 +1,6 @@
 # checkstyle-extension
 An extension of the checkstyle eclipse plugin that implements Halsted metrics
 
-Checks Implemented so far:
-Category A:
-- Halstead Length
-
-Category B:
-- Number of Operators
-- Number of Operands
-
 Operators Tokens Include:
       TokenTypes.ARRAY_DECLARATOR,
 			TokenTypes.ASSIGN,
@@ -100,3 +92,5 @@ Operand Tokens Include:
 			TokenTypes.NUM_LONG,
 			TokenTypes.RESOURCE,
 			TokenTypes.STRING_LITERAL
+
+In considering Halstead vocabulary, unique operators and operands are taken to mean "not of the same token type" this will mean that different variables of the same data type will not be counted as seperate unique operands.
