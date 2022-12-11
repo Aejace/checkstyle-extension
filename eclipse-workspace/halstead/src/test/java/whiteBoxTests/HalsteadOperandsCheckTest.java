@@ -1,4 +1,4 @@
-package tests;
+package whiteBoxTests;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.anyInt;
@@ -13,40 +13,40 @@ import org.junit.jupiter.api.Test;
 
 import com.puppycrawl.tools.checkstyle.api.DetailAST;
 
-import loopingStatementsPackage.LoopingStatementsCheck;
+import halsteadOperandsPackage.HalsteadOperandsCheck;
 import resources.TokenLists;
 
-class LoopingStatementsCheckTest {
+class HalsteadOperandsCheckTest {
 
 	private int[] tokens;
 	
-	public LoopingStatementsCheckTest()
+	public HalsteadOperandsCheckTest()
 	{
 		TokenLists tokenLists = new TokenLists();
-		tokens = tokenLists.getLoopingStatements();
+		tokens = tokenLists.getOperands();
 	}
 	
 	@Test
 	void getDefaultTokensTest() {
-		LoopingStatementsCheck spyCheck = spy(LoopingStatementsCheck.class);
+		HalsteadOperandsCheck spyCheck = spy(HalsteadOperandsCheck.class);
 		assertArrayEquals(tokens, spyCheck.getDefaultTokens()); 
 	}
 	
 	@Test
 	void getAcceptableTokensTest() {
-		LoopingStatementsCheck spyCheck = spy(LoopingStatementsCheck.class);
+		HalsteadOperandsCheck spyCheck = spy(HalsteadOperandsCheck.class);
 		assertArrayEquals(tokens, spyCheck.getAcceptableTokens()); 
 	}
 
 	@Test
 	void getRequiredTokensTest() {
-		LoopingStatementsCheck spyCheck = spy(LoopingStatementsCheck.class);
+		HalsteadOperandsCheck spyCheck = spy(HalsteadOperandsCheck.class);
 		assertArrayEquals(tokens, spyCheck.getRequiredTokens()); 
 	}
 
 	@Test
 	void beginTreeTest() {
-		LoopingStatementsCheck spyCheck = spy(LoopingStatementsCheck.class);
+		HalsteadOperandsCheck spyCheck = spy(HalsteadOperandsCheck.class);
 		DetailAST mockRoot = mock(DetailAST.class);
 		spyCheck.beginTree(mockRoot);
 		verify(spyCheck, times(1)).beginTree(mockRoot);
@@ -54,7 +54,7 @@ class LoopingStatementsCheckTest {
 	
 	@Test
 	void visitTokenTest() {
-		LoopingStatementsCheck spyCheck = spy(LoopingStatementsCheck.class);
+		HalsteadOperandsCheck spyCheck = spy(HalsteadOperandsCheck.class);
 		DetailAST mockToken = mock(DetailAST.class);
 		spyCheck.visitToken(mockToken);
 		verify(spyCheck, times(1)).visitToken(mockToken);
@@ -62,10 +62,11 @@ class LoopingStatementsCheckTest {
 	
 	@Test
 	void finishTreeTest() {
-		LoopingStatementsCheck spyCheck = spy(LoopingStatementsCheck.class);
+		HalsteadOperandsCheck spyCheck = spy(HalsteadOperandsCheck.class);
 		DetailAST aAST = mock(DetailAST.class);
 		doNothing().when(spyCheck).log(anyInt(), anyString());
 		spyCheck.finishTree(aAST);
 		verify(spyCheck, times(1)).finishTree(aAST);	
 	}
+
 }

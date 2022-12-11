@@ -1,14 +1,12 @@
 package halsteadEffortPackage;
 
 import java.util.HashMap;
-
-import com.puppycrawl.tools.checkstyle.api.AbstractCheck;
 import com.puppycrawl.tools.checkstyle.api.DetailAST;
-
+import basicCountingPackage.BasicCountingCheck;
 import resources.TokenLists;
 
-public class HalsteadEffortCheck extends AbstractCheck {
-
+public class HalsteadEffortCheck extends BasicCountingCheck 
+{
 	private String message = "Halstead Effort: ";
 	int[] operatorTokenTypes;
 	int[] operandTokenTypes;
@@ -109,6 +107,7 @@ public class HalsteadEffortCheck extends AbstractCheck {
 		
 		double hEffort = hDifficulty * hVolume;
 		
+		result = hEffort;
 		log(aAST.getLineNo(), message + hEffort + " -AJ");
 		operatorDictionary = new HashMap<Integer, Integer>();
 		operandDictionary = new HashMap<Integer, Integer>();

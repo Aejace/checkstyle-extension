@@ -1,15 +1,16 @@
 package numberOfCommentsPackage;
 
-import com.puppycrawl.tools.checkstyle.api.AbstractCheck;
 import com.puppycrawl.tools.checkstyle.api.DetailAST;
 
+import basicCountingPackage.BasicCountingCheck;
 import resources.TokenLists;
 
-public class NumberOfCommentsCheck extends AbstractCheck {
-	
+public class NumberOfCommentsCheck extends BasicCountingCheck 
+{	
 	private int count = 0;
 	private String message = "Comments Count: ";
 	private final int[] tokens;
+	
 	
 	public NumberOfCommentsCheck()
 	{
@@ -50,7 +51,13 @@ public class NumberOfCommentsCheck extends AbstractCheck {
 	@Override
 	public void finishTree(DetailAST aAST)
 	{
+		result = count;
 		log(aAST.getLineNo(), message + count + " -AJ");
 		count = 0;
 	}
+	
+	@Override
+	public boolean isCommentNodesRequired() {
+        return true;
+    }
 }

@@ -4,4 +4,26 @@
     <fullyQualifiedTypeName name="com.puppycrawl.tools.checkstyle.api.DetailAST"/>
     <fullyQualifiedTypeName name="net.bytebuddy.description.ByteCodeElement.Token.TokenList"/>
     <fullyQualifiedTypeName name="resources.TokenLists"/>
+    <fullyQualifiedTypeName name="com.puppycrawl.tools.checkstyle.api.TokenTypes"/>
+    <fullyQualifiedTypeName name="java.util.HashMap"/>
+    <fullyQualifiedTypeName name="java.util.Arrays"/>
+    <fullyQualifiedTypeName name="numberOfCommentsPackage.NumberOfCommentsCheck"/>
+    <fullyQualifiedTypeName name="linesOfCommentsPackage.LinesOfCommentsCheck"/>
+    <fullyQualifiedTypeName name="halsteadVolumePackage.HalsteadVolumeCheck"/>
+    <fullyQualifiedTypeName name="halsteadVocabularyPackage.HalsteadVocabularyCheck"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="org.junit.jupiter.api.Disabled"/>
+    <fullyQualifiedTypeName name="loopingStatementsPackage.LoopingStatementsCheck"/>
+    <fullyQualifiedTypeName name="com.puppycrawl.tools.checkstyle.api.LocalizedMessage"/>
+    <fullyQualifiedTypeName name="com.puppycrawl.tools.checkstyle.api.AbstractCheck"/>
+    <fullyQualifiedTypeName name="basicCountingPackage.basicCountingCheck"/>
+    <fullyQualifiedTypeName name="basicCountingPackage.BasicCountingCheck"/>
+    <fullyQualifiedTypeName name="expressionsPackage.ExpressionsCheck"/>
+    <fullyQualifiedTypeName name="halsteadDifficultyPackage.HalsteadDifficultyCheck"/>
+    <fullyQualifiedTypeName name="org.junit.Test"/>
+    <fullyQualifiedTypeName name="halsteadEffortPackage.HalsteadEffortCheck"/>
+    <fullyQualifiedTypeName name="halsteadLengthPackage.HalsteadLengthCheck"/>
+    <fullyQualifiedTypeName name="halsteadOperandsPackage.HalsteadOperandsCheck"/>
+    <fullyQualifiedTypeName name="halsteadOperatorsPackage.HalsteadOperatorsCheck"/>
 </qualifiedTypeNameHistroy>

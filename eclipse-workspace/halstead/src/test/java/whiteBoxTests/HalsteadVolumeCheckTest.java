@@ -1,6 +1,6 @@
-package tests;
+package whiteBoxTests;
 
-import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.anyInt;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.doNothing;
@@ -10,16 +10,17 @@ import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 
 import org.junit.jupiter.api.Test;
+
 import com.puppycrawl.tools.checkstyle.api.DetailAST;
 
-import halsteadLengthPackage.HalsteadLengthCheck;
+import halsteadVolumePackage.HalsteadVolumeCheck;
 import resources.TokenLists;
 
-class HalsteadLengthCheckTest {
+class HalsteadVolumeCheckTest {
 
-	private int[] tokens;
+private int[] tokens;
 	
-	public HalsteadLengthCheckTest()
+	public HalsteadVolumeCheckTest()
 	{
 		TokenLists tokenLists = new TokenLists();
 		int[] operators = tokenLists.getOperators();
@@ -39,25 +40,25 @@ class HalsteadLengthCheckTest {
 	
 	@Test
 	void getDefaultTokensTest() {
-		HalsteadLengthCheck spyCheck = spy(HalsteadLengthCheck.class);
+		HalsteadVolumeCheck spyCheck = spy(HalsteadVolumeCheck.class);
 		assertArrayEquals(tokens, spyCheck.getDefaultTokens()); 
 	}
 	
 	@Test
 	void getAcceptableTokensTest() {
-		HalsteadLengthCheck spyCheck = spy(HalsteadLengthCheck.class);
+		HalsteadVolumeCheck spyCheck = spy(HalsteadVolumeCheck.class);
 		assertArrayEquals(tokens, spyCheck.getAcceptableTokens()); 
 	}
 
 	@Test
 	void getRequiredTokensTest() {
-		HalsteadLengthCheck spyCheck = spy(HalsteadLengthCheck.class);
+		HalsteadVolumeCheck spyCheck = spy(HalsteadVolumeCheck.class);
 		assertArrayEquals(tokens, spyCheck.getRequiredTokens()); 
 	}
 
 	@Test
 	void beginTreeTest() {
-		HalsteadLengthCheck spyCheck = spy(HalsteadLengthCheck.class);
+		HalsteadVolumeCheck spyCheck = spy(HalsteadVolumeCheck.class);
 		DetailAST mockRoot = mock(DetailAST.class);
 		spyCheck.beginTree(mockRoot);
 		verify(spyCheck, times(1)).beginTree(mockRoot);
@@ -65,7 +66,7 @@ class HalsteadLengthCheckTest {
 	
 	@Test
 	void visitTokenTest() {
-		HalsteadLengthCheck spyCheck = spy(HalsteadLengthCheck.class);
+		HalsteadVolumeCheck spyCheck = spy(HalsteadVolumeCheck.class);
 		DetailAST mockToken = mock(DetailAST.class);
 		spyCheck.visitToken(mockToken);
 		verify(spyCheck, times(1)).visitToken(mockToken);
@@ -73,10 +74,12 @@ class HalsteadLengthCheckTest {
 	
 	@Test
 	void finishTreeTest() {
-		HalsteadLengthCheck spyCheck = spy(HalsteadLengthCheck.class);
+		HalsteadVolumeCheck spyCheck = spy(HalsteadVolumeCheck.class);
 		DetailAST aAST = mock(DetailAST.class);
+		spyCheck.visitToken(aAST);
 		doNothing().when(spyCheck).log(anyInt(), anyString());
 		spyCheck.finishTree(aAST);
 		verify(spyCheck, times(1)).finishTree(aAST);	
 	}
+
 }

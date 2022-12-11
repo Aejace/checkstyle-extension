@@ -1,12 +1,12 @@
 package expressionsPackage;
 
-import com.puppycrawl.tools.checkstyle.api.AbstractCheck;
 import com.puppycrawl.tools.checkstyle.api.DetailAST;
 
+import basicCountingPackage.BasicCountingCheck;
 import resources.TokenLists;
 
-public class ExpressionsCheck extends AbstractCheck {
-	private int count = 0;
+public class ExpressionsCheck extends BasicCountingCheck {
+	private int count;
 	private String message = "Expressions count: ";
 	private final int[] tokens;
 	
@@ -49,7 +49,9 @@ public class ExpressionsCheck extends AbstractCheck {
 	@Override
 	public void finishTree(DetailAST aAST)
 	{
+		result = count;
 		log(aAST.getLineNo(), message + count + " -AJ");
+		
 		count = 0;
 	}
 }

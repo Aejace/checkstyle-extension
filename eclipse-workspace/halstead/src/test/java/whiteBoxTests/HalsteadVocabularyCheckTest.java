@@ -1,4 +1,4 @@
-package tests;
+package whiteBoxTests;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.anyInt;

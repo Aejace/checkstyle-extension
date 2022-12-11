@@ -1,4 +1,4 @@
-package tests;
+package whiteBoxTests;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.anyInt;
@@ -13,40 +13,40 @@ import org.junit.jupiter.api.Test;
 
 import com.puppycrawl.tools.checkstyle.api.DetailAST;
 
-import numberOfCommentsPackage.NumberOfCommentsCheck;
+import linesOfCommentsPackage.LinesOfCommentsCheck;
 import resources.TokenLists;
 
-class NumberOfCommentsCheckTest {
+class LinesOfCommentsCheckTest {
 
 	private int[] tokens;
 	
-	public NumberOfCommentsCheckTest()
+	public LinesOfCommentsCheckTest()
 	{
 		TokenLists tokenLists = new TokenLists();
-		tokens = tokenLists.getComments();
+		tokens = tokenLists.getCommentLines();
 	}
 	
 	@Test
 	void getDefaultTokensTest() {
-		NumberOfCommentsCheck spyCheck = spy(NumberOfCommentsCheck.class);
+		LinesOfCommentsCheck spyCheck = spy(LinesOfCommentsCheck.class);
 		assertArrayEquals(tokens, spyCheck.getDefaultTokens()); 
 	}
 	
 	@Test
 	void getAcceptableTokensTest() {
-		NumberOfCommentsCheck spyCheck = spy(NumberOfCommentsCheck.class);
+		LinesOfCommentsCheck spyCheck = spy(LinesOfCommentsCheck.class);
 		assertArrayEquals(tokens, spyCheck.getAcceptableTokens()); 
 	}
 
 	@Test
 	void getRequiredTokensTest() {
-		NumberOfCommentsCheck spyCheck = spy(NumberOfCommentsCheck.class);
+		LinesOfCommentsCheck spyCheck = spy(LinesOfCommentsCheck.class);
 		assertArrayEquals(tokens, spyCheck.getRequiredTokens()); 
 	}
 
 	@Test
 	void beginTreeTest() {
-		NumberOfCommentsCheck spyCheck = spy(NumberOfCommentsCheck.class);
+		LinesOfCommentsCheck spyCheck = spy(LinesOfCommentsCheck.class);
 		DetailAST mockRoot = mock(DetailAST.class);
 		spyCheck.beginTree(mockRoot);
 		verify(spyCheck, times(1)).beginTree(mockRoot);
@@ -54,7 +54,7 @@ class NumberOfCommentsCheckTest {
 	
 	@Test
 	void visitTokenTest() {
-		NumberOfCommentsCheck spyCheck = spy(NumberOfCommentsCheck.class);
+		LinesOfCommentsCheck spyCheck = spy(LinesOfCommentsCheck.class);
 		DetailAST mockToken = mock(DetailAST.class);
 		spyCheck.visitToken(mockToken);
 		verify(spyCheck, times(1)).visitToken(mockToken);
@@ -62,7 +62,7 @@ class NumberOfCommentsCheckTest {
 	
 	@Test
 	void finishTreeTest() {
-		NumberOfCommentsCheck spyCheck = spy(NumberOfCommentsCheck.class);
+		LinesOfCommentsCheck spyCheck = spy(LinesOfCommentsCheck.class);
 		DetailAST aAST = mock(DetailAST.class);
 		doNothing().when(spyCheck).log(anyInt(), anyString());
 		spyCheck.finishTree(aAST);

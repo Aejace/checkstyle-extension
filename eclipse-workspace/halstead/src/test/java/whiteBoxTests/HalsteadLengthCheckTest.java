@@ -1,6 +1,7 @@
-package tests;
+package whiteBoxTests;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.mockito.ArgumentMatchers.anyInt;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.doNothing;
@@ -10,43 +11,54 @@ import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 
 import org.junit.jupiter.api.Test;
-
 import com.puppycrawl.tools.checkstyle.api.DetailAST;
 
-import linesOfCommentsPackage.LinesOfCommentsCheck;
+import halsteadLengthPackage.HalsteadLengthCheck;
 import resources.TokenLists;
 
-class LinesOfCommentsCheckTest {
+class HalsteadLengthCheckTest {
 
 	private int[] tokens;
 	
-	public LinesOfCommentsCheckTest()
+	public HalsteadLengthCheckTest()
 	{
 		TokenLists tokenLists = new TokenLists();
-		tokens = tokenLists.getCommentLines();
+		int[] operators = tokenLists.getOperators();
+		int[] operands = tokenLists.getOperands();
+		tokens = new int[operators.length + operands.length];
+	    int index = 0;
+	    for (int token : operators) {
+	        tokens[index] = token;
+	        index++;
+	    }
+
+	    for (int token : operands) {
+	        tokens[index] = token;
+	        index++;
+	    }
 	}
 	
 	@Test
 	void getDefaultTokensTest() {
-		LinesOfCommentsCheck spyCheck = spy(LinesOfCommentsCheck.class);
+		HalsteadLengthCheck spyCheck = spy(HalsteadLengthCheck.class);
 		assertArrayEquals(tokens, spyCheck.getDefaultTokens()); 
 	}
 	
 	@Test
 	void getAcceptableTokensTest() {
-		LinesOfCommentsCheck spyCheck = spy(LinesOfCommentsCheck.class);
+		HalsteadLengthCheck spyCheck = spy(HalsteadLengthCheck.class);
 		assertArrayEquals(tokens, spyCheck.getAcceptableTokens()); 
 	}
 
 	@Test
 	void getRequiredTokensTest() {
-		LinesOfCommentsCheck spyCheck = spy(LinesOfCommentsCheck.class);
+		HalsteadLengthCheck spyCheck = spy(HalsteadLengthCheck.class);
 		assertArrayEquals(tokens, spyCheck.getRequiredTokens()); 
 	}
 
 	@Test
 	void beginTreeTest() {
-		LinesOfCommentsCheck spyCheck = spy(LinesOfCommentsCheck.class);
+		HalsteadLengthCheck spyCheck = spy(HalsteadLengthCheck.class);
 		DetailAST mockRoot = mock(DetailAST.class);
 		spyCheck.beginTree(mockRoot);
 		verify(spyCheck, times(1)).beginTree(mockRoot);
@@ -54,7 +66,7 @@ class LinesOfCommentsCheckTest {
 	
 	@Test
 	void visitTokenTest() {
-		LinesOfCommentsCheck spyCheck = spy(LinesOfCommentsCheck.class);
+		HalsteadLengthCheck spyCheck = spy(HalsteadLengthCheck.class);
 		DetailAST mockToken = mock(DetailAST.class);
 		spyCheck.visitToken(mockToken);
 		verify(spyCheck, times(1)).visitToken(mockToken);
@@ -62,10 +74,17 @@ class LinesOfCommentsCheckTest {
 	
 	@Test
 	void finishTreeTest() {
-		LinesOfCommentsCheck spyCheck = spy(LinesOfCommentsCheck.class);
+		HalsteadLengthCheck spyCheck = spy(HalsteadLengthCheck.class);
 		DetailAST aAST = mock(DetailAST.class);
 		doNothing().when(spyCheck).log(anyInt(), anyString());
 		spyCheck.finishTree(aAST);
 		verify(spyCheck, times(1)).finishTree(aAST);	
+	}
+	
+	@Test
+	void getResultTest() {
+		HalsteadLengthCheck check = new HalsteadLengthCheck();
+		Number result = check.getResult();
+		assertEquals(0, result);
 	}
 }

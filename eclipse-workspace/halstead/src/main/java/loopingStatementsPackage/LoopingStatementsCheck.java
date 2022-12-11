@@ -1,12 +1,13 @@
 package loopingStatementsPackage;
 
-import com.puppycrawl.tools.checkstyle.api.AbstractCheck;
 import com.puppycrawl.tools.checkstyle.api.DetailAST;
 
+import basicCountingPackage.BasicCountingCheck;
 import resources.TokenLists;
 
-public class LoopingStatementsCheck extends AbstractCheck {
-	private int count = 0;
+public class LoopingStatementsCheck extends BasicCountingCheck 
+{
+	private int count;
 	private String message = "Looping statements count: ";
 	private final int[] tokens;
 	
@@ -49,6 +50,7 @@ public class LoopingStatementsCheck extends AbstractCheck {
 	@Override
 	public void finishTree(DetailAST aAST)
 	{
+		result = count;
 		log(aAST.getLineNo(), message + count + " -AJ");
 		count = 0;
 	}

@@ -2,9 +2,10 @@ package halsteadOperandsPackage;
 
 import com.puppycrawl.tools.checkstyle.api.*;
 
+import basicCountingPackage.BasicCountingCheck;
 import resources.TokenLists;
 
-public class HalsteadOperandsCheck extends AbstractCheck {
+public class HalsteadOperandsCheck extends BasicCountingCheck {
 
 	private int count = 0;
 	private String message = "Operands Count: ";
@@ -49,6 +50,7 @@ public class HalsteadOperandsCheck extends AbstractCheck {
 	@Override
 	public void finishTree(DetailAST aAST)
 	{
+		result = count;
 		log(aAST.getLineNo(), message + count + " -AJ");
 		count = 0;
 	}

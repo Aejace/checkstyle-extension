@@ -2,12 +2,12 @@ package halsteadDifficultyPackage;
 
 import java.util.HashMap;
 
-import com.puppycrawl.tools.checkstyle.api.AbstractCheck;
 import com.puppycrawl.tools.checkstyle.api.DetailAST;
 
+import basicCountingPackage.BasicCountingCheck;
 import resources.TokenLists;
 
-public class HalsteadDifficultyCheck extends AbstractCheck {
+public class HalsteadDifficultyCheck extends BasicCountingCheck {
 	
 	private String message = "Halstead Difficulty: ";
 	int[] operatorTokenTypes;
@@ -90,6 +90,7 @@ public class HalsteadDifficultyCheck extends AbstractCheck {
 		
 		double hDifficulty = ((uniqueOperators / 2) * operands) / uniqueOperands;
 		
+		result = hDifficulty;
 		log(aAST.getLineNo(), message + hDifficulty + " -AJ");
 		operatorDictionary = new HashMap<Integer, Integer>();
 		operandDictionary = new HashMap<Integer, Integer>();
