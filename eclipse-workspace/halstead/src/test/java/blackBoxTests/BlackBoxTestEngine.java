@@ -6,6 +6,7 @@ import java.io.IOException;
 import com.puppycrawl.tools.checkstyle.DefaultConfiguration;
 import com.puppycrawl.tools.checkstyle.DefaultContext;
 import com.puppycrawl.tools.checkstyle.JavaParser;
+import com.puppycrawl.tools.checkstyle.JavaParser.Options;
 import com.puppycrawl.tools.checkstyle.api.AbstractCheck;
 import com.puppycrawl.tools.checkstyle.api.CheckstyleException;
 import com.puppycrawl.tools.checkstyle.api.DetailAST;
@@ -27,8 +28,14 @@ public class BlackBoxTestEngine
 		FileText ft = new FileText(file,"UTF-8");
 		FileContents fc = new FileContents(ft);
 		
-		// Fill AST with FileContents
-		this.root = JavaParser.parse(fc);
+		if (check.isCommentNodesRequired()) 
+		{
+			 root = JavaParser.parseFile(file, Options.WITH_COMMENTS);
+		} 
+		else 
+		{
+			 root = JavaParser.parse(fc);
+		}
 		
 		// Configure Check
 		this.check.configure(new DefaultConfiguration("Local"));

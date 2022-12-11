@@ -1,6 +1,8 @@
 package linesOfCommentsPackage;
 
 import com.puppycrawl.tools.checkstyle.api.DetailAST;
+import com.puppycrawl.tools.checkstyle.api.TokenTypes;
+
 import basicCountingPackage.BasicCountingCheck;
 import resources.TokenLists;
 
@@ -9,6 +11,7 @@ public class LinesOfCommentsCheck extends BasicCountingCheck
 	private int count = 0;
 	private String message = "Line of comments count: ";
 	private final int[] tokens;
+	private int BeginningLineNumber = 0;
 	
 	public LinesOfCommentsCheck()
 	{
@@ -44,6 +47,14 @@ public class LinesOfCommentsCheck extends BasicCountingCheck
 	public void visitToken(DetailAST aAST) 
 	{
 		count++;
+		if (aAST.getType() == TokenTypes.BLOCK_COMMENT_BEGIN)
+		{
+			this.BeginningLineNumber = aAST.getLineNo();
+		}
+		else if (aAST.getType() == TokenTypes.BLOCK_COMMENT_END)
+		{
+			count += aAST.getLineNo() - this.BeginningLineNumber - 1;
+		}
 	}
 	
 	@Override
@@ -53,4 +64,9 @@ public class LinesOfCommentsCheck extends BasicCountingCheck
 		log(aAST.getLineNo(), message + count + " -AJ");
 		count = 0;
 	}
+	
+	@Override
+	public boolean isCommentNodesRequired() {
+        return true;
+    }
 }

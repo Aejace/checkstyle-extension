@@ -11,18 +11,19 @@
     <fullyQualifiedTypeName name="linesOfCommentsPackage.LinesOfCommentsCheck"/>
     <fullyQualifiedTypeName name="halsteadVolumePackage.HalsteadVolumeCheck"/>
     <fullyQualifiedTypeName name="halsteadVocabularyPackage.HalsteadVocabularyCheck"/>
-    <fullyQualifiedTypeName name="halsteadOperatorsPackage.HalsteadOperatorsCheck"/>
-    <fullyQualifiedTypeName name="halsteadOperandsPackage.HalsteadOperandsCheck"/>
-    <fullyQualifiedTypeName name="halsteadLengthPackage.HalsteadLengthCheck"/>
-    <fullyQualifiedTypeName name="expressionsPackage.ExpressionsCheck"/>
-    <fullyQualifiedTypeName name="halsteadDifficultyPackage.HalsteadDifficultyCheck"/>
     <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
-    <fullyQualifiedTypeName name="halsteadEffortPackage.HalsteadEffortCheck"/>
     <fullyQualifiedTypeName name="org.junit.jupiter.api.Disabled"/>
     <fullyQualifiedTypeName name="loopingStatementsPackage.LoopingStatementsCheck"/>
     <fullyQualifiedTypeName name="com.puppycrawl.tools.checkstyle.api.LocalizedMessage"/>
     <fullyQualifiedTypeName name="com.puppycrawl.tools.checkstyle.api.AbstractCheck"/>
     <fullyQualifiedTypeName name="basicCountingPackage.basicCountingCheck"/>
     <fullyQualifiedTypeName name="basicCountingPackage.BasicCountingCheck"/>
+    <fullyQualifiedTypeName name="expressionsPackage.ExpressionsCheck"/>
+    <fullyQualifiedTypeName name="halsteadDifficultyPackage.HalsteadDifficultyCheck"/>
+    <fullyQualifiedTypeName name="org.junit.Test"/>
+    <fullyQualifiedTypeName name="halsteadEffortPackage.HalsteadEffortCheck"/>
+    <fullyQualifiedTypeName name="halsteadLengthPackage.HalsteadLengthCheck"/>
+    <fullyQualifiedTypeName name="halsteadOperandsPackage.HalsteadOperandsCheck"/>
+    <fullyQualifiedTypeName name="halsteadOperatorsPackage.HalsteadOperatorsCheck"/>
 </qualifiedTypeNameHistroy>

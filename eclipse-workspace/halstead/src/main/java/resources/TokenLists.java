@@ -94,10 +94,10 @@ public class TokenLists {
 			TokenTypes.RESOURCE,
 			TokenTypes.STRING_LITERAL};
 
-	private final int[] comments = new int[] {TokenTypes.BLOCK_COMMENT_BEGIN, 
-			TokenTypes.SINGLE_LINE_COMMENT};
+	private final int[] comments = new int[] {TokenTypes.COMMENT_CONTENT};
 	
-	private final int[] commentLines = new int[] {TokenTypes.COMMENT_CONTENT};
+	private final int[] commentLines = new int[] {TokenTypes.BLOCK_COMMENT_BEGIN, 
+			TokenTypes.SINGLE_LINE_COMMENT, TokenTypes.BLOCK_COMMENT_END };
 	
 	private final int[] loopingStatements = new int[] {TokenTypes.LITERAL_DO, 
 			TokenTypes.LITERAL_FOR, 

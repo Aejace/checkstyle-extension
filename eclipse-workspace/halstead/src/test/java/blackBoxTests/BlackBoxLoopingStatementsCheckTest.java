@@ -13,12 +13,32 @@ import loopingStatementsPackage.LoopingStatementsCheck;
 class BlackBoxLoopingStatementsCheckTest
 {
 	@Test
-	void test() throws IOException, CheckstyleException 
+	public void testNoLoops() throws IOException, CheckstyleException 
 	{
-		String filePath = "src/test/resources/blackBoxTestFiles/BlackBoxLoopingStatementsFile.java";
+		String filePath = "src/test/resources/blackBoxTestFiles/BlackBoxBasicFile.java";
 		LoopingStatementsCheck check = new LoopingStatementsCheck();
 		BlackBoxTestEngine engine = new BlackBoxTestEngine(check, filePath);
 		Number result = engine.testFile();
-		assertEquals(3, result);
+		assertEquals(0, result);
+	}
+	
+	@Test
+	public void testAllLoopTypes() throws IOException, CheckstyleException 
+	{
+		String filePath = "src/test/resources/blackBoxTestFiles//blackBoxLoopingTests/BlackBoxAllLoopingStatementsFile.java";
+		LoopingStatementsCheck check = new LoopingStatementsCheck();
+		BlackBoxTestEngine engine = new BlackBoxTestEngine(check, filePath);
+		Number result = engine.testFile();
+		assertEquals(4, result);
+	}
+	
+	@Test
+	public void testNestedLoops() throws IOException, CheckstyleException 
+	{
+		String filePath = "src/test/resources/blackBoxTestFiles//blackBoxLoopingTests/BlackBoxNestedLoopingStatementsFile.java";
+		LoopingStatementsCheck check = new LoopingStatementsCheck();
+		BlackBoxTestEngine engine = new BlackBoxTestEngine(check, filePath);
+		Number result = engine.testFile();
+		assertEquals(2, result);
 	}
 }
